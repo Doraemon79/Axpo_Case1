@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<coverage line-rate="0.9440000000000001" branch-rate="0.7857" version="1.9" timestamp="1713802756" lines-covered="152" lines-valid="161" branches-covered="11" branches-valid="14">
+<coverage line-rate="0.9444" branch-rate="0.7857" version="1.9" timestamp="1713820250" lines-covered="153" lines-valid="162" branches-covered="11" branches-valid="14">
   <sources>
     <source>C:\</source>
   </sources>
   <packages>
-    <package name="ReportGeneratorLogic" line-rate="0.8887999999999999" branch-rate="0.7857" complexity="21">
+    <package name="ReportGeneratorLogic" line-rate="0.8904000000000001" branch-rate="0.7857" complexity="21">
       <classes>
         <class name="ReportGeneratorLogic.Services.CsvWriterService" filename="Repos\ReportGenerator\ReportGeneratorLogic\Services\CsvWriterService.cs" line-rate="1" branch-rate="1" complexity="3">
           <methods>
@@ -13,19 +13,20 @@
                 <line number="17" hits="1" branch="False" />
                 <line number="18" hits="1" branch="False" />
                 <line number="19" hits="1" branch="False" />
-                <line number="21" hits="1" branch="False" />
+                <line number="20" hits="1" branch="False" />
                 <line number="22" hits="1" branch="False" />
                 <line number="23" hits="1" branch="False" />
-                <line number="25" hits="5" branch="True" condition-coverage="100% (2/2)">
+                <line number="24" hits="1" branch="False" />
+                <line number="26" hits="5" branch="True" condition-coverage="100% (2/2)">
                   <conditions>
-                    <condition number="88" type="jump" coverage="100%" />
+                    <condition number="105" type="jump" coverage="100%" />
                   </conditions>
                 </line>
-                <line number="26" hits="1" branch="False" />
                 <line number="27" hits="1" branch="False" />
                 <line number="28" hits="1" branch="False" />
                 <line number="29" hits="1" branch="False" />
-                <line number="31" hits="2" branch="False" />
+                <line number="30" hits="1" branch="False" />
+                <line number="32" hits="2" branch="False" />
               </lines>
             </method>
             <method name=".ctor" signature="(CsvHelper.Configuration.CsvConfiguration)" line-rate="1" branch-rate="1" complexity="1">
@@ -41,19 +42,20 @@
             <line number="17" hits="1" branch="False" />
             <line number="18" hits="1" branch="False" />
             <line number="19" hits="1" branch="False" />
-            <line number="21" hits="1" branch="False" />
+            <line number="20" hits="1" branch="False" />
             <line number="22" hits="1" branch="False" />
             <line number="23" hits="1" branch="False" />
-            <line number="25" hits="5" branch="True" condition-coverage="100% (2/2)">
+            <line number="24" hits="1" branch="False" />
+            <line number="26" hits="5" branch="True" condition-coverage="100% (2/2)">
               <conditions>
-                <condition number="88" type="jump" coverage="100%" />
+                <condition number="105" type="jump" coverage="100%" />
               </conditions>
             </line>
-            <line number="26" hits="1" branch="False" />
             <line number="27" hits="1" branch="False" />
             <line number="28" hits="1" branch="False" />
             <line number="29" hits="1" branch="False" />
-            <line number="31" hits="2" branch="False" />
+            <line number="30" hits="1" branch="False" />
+            <line number="32" hits="2" branch="False" />
             <line number="12" hits="1" branch="False" />
             <line number="13" hits="1" branch="False" />
             <line number="14" hits="1" branch="False" />
@@ -307,11 +309,11 @@
                 <line number="37" hits="1" branch="False" />
                 <line number="38" hits="1" branch="False" />
                 <line number="39" hits="1" branch="False" />
-                <line number="43" hits="1" branch="False" />
+                <line number="42" hits="1" branch="False" />
+                <line number="45" hits="1" branch="False" />
                 <line number="46" hits="1" branch="False" />
                 <line number="47" hits="1" branch="False" />
-                <line number="48" hits="1" branch="False" />
-                <line number="50" hits="1" branch="False" />
+                <line number="49" hits="1" branch="False" />
               </lines>
             </method>
             <method name=".ctor" signature="()" line-rate="1" branch-rate="1" complexity="1">
@@ -342,11 +344,11 @@
             <line number="37" hits="1" branch="False" />
             <line number="38" hits="1" branch="False" />
             <line number="39" hits="1" branch="False" />
-            <line number="43" hits="1" branch="False" />
+            <line number="42" hits="1" branch="False" />
+            <line number="45" hits="1" branch="False" />
             <line number="46" hits="1" branch="False" />
             <line number="47" hits="1" branch="False" />
-            <line number="48" hits="1" branch="False" />
-            <line number="50" hits="1" branch="False" />
+            <line number="49" hits="1" branch="False" />
             <line number="14" hits="1" branch="False" />
             <line number="15" hits="1" branch="False" />
             <line number="16" hits="1" branch="False" />

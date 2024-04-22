@@ -45,13 +45,13 @@ namespace ReportGenerator
         private static bool ValidateConfiguration()
         {
             var configuration = ServiceProvider.GetRequiredService<IConfiguration>();
+
             string outputPath = configuration["OutputFolderPath"];
             if (string.IsNullOrWhiteSpace(outputPath))
             {
-                Console.WriteLine("Output path is not specified in the Configuration.");
+                Log.Error("Output path is not specified in the configuration.");
                 return false;
             }
-
             if (!Directory.Exists(outputPath))
             {
                 try
@@ -60,14 +60,21 @@ namespace ReportGenerator
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine($"Failed to create directory at '{outputPath}': {ex.Message}");
+                    Log.Error("Failed to create directory at '{OutputPath}': {ExceptionMessage}", outputPath, ex.Message);
                     return false;
                 }
             }
 
             if (!int.TryParse(configuration["IntervalMinutes"], out int interval) || interval < 1)
             {
-                Console.WriteLine("Interval must be an integer of 2 or higher.");
+                Log.Error("Interval must be an integer of 1 or higher.");
+                return false;
+            }
+
+            string inputDate = configuration["ReportDate"];
+            if (!DateTime.TryParseExact(inputDate, "yyyy-MM-dd", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime reportDate))
+            {
+                Log.Error("Invalid date format. Please ensure the date is in ISO 8601 format (YYYY-MM-DD). Received date: {InputDate}", inputDate);
                 return false;
             }
 
@@ -110,16 +117,20 @@ namespace ReportGenerator
 
             while (true)
             {
-                await GenerateAndSaveReport(configuration, ServiceProvider);
+                await GenerateAndSaveReport();
                 await Task.Delay(interval);
             }
         }
 
-        private static async Task GenerateAndSaveReport(IConfiguration configuration, IServiceProvider? _serviceProvider)
+        private static async Task GenerateAndSaveReport()
         {
+            var configuration = ServiceProvider.GetRequiredService<IConfiguration>();
             int retryAttempts = 0;
-            var Configuration = _serviceProvider.GetRequiredService<IConfiguration>();
-            _ = int.TryParse(Configuration["MaxRetries"], out int maxRetries);
+            int maxRetries;
+            int.TryParse(configuration["MaxRetries"], out maxRetries);
+
+            // Getting the previously validated report date from the configuration
+            DateTime.TryParseExact(configuration["ReportDate"], "yyyy-MM-dd", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime reportDate);
 
             while (retryAttempts < maxRetries)
             {
@@ -129,9 +140,9 @@ namespace ReportGenerator
                     var powerTradeService = ServiceProvider.GetRequiredService<IPowerTradeService>();
                     var csvWriter = ServiceProvider.GetRequiredService<ICsvWriter>();
 
-                    DateTime followingDay = DateTime.UtcNow.AddDays(1);
-                    var trades = await powerTradeService.GetTradesAsync(followingDay);
-                    var records = tradeAggregationService.AggregateTrades(trades, followingDay);
+
+                    var trades = await powerTradeService.GetTradesAsync(reportDate.AddDays(1));
+                    var records = tradeAggregationService.AggregateTrades(trades, reportDate.AddDays(1));
 
                     string reportDirectoryPath = configuration["OutputFolderPath"];
                     if (!Directory.Exists(reportDirectoryPath))
@@ -139,10 +150,15 @@ namespace ReportGenerator
                         _ = Directory.CreateDirectory(reportDirectoryPath);
                     }
 
-                    string filePath = $"{reportDirectoryPath}PowerPosition_{DateTime.UtcNow:yyyyMMdd}_{DateTime.UtcNow:HHmm}.csv";
-                    csvWriter.WriteCsv(records, filePath);
+                    string filePath = $"{reportDirectoryPath}PowerPosition_{reportDate:yyyyMMdd}_{DateTime.UtcNow:HHmm}.csv";
+                    using (var writer = new StreamWriter(filePath))
+                    using (var csv = new CsvHelper.CsvWriter(writer, new CsvConfiguration(CultureInfo.InvariantCulture) { Delimiter = ";" }))
+                    {
+                        csv.WriteRecords(records); // Writing the records to the CSV file
+                    }
+
                     Log.Information("Report generated and saved to: {FilePath}", filePath);
-                    break;
+                    return; // Exit the method after successful execution
                 }
                 catch (Exception ex)
                 {
@@ -151,11 +167,11 @@ namespace ReportGenerator
                     if (retryAttempts >= maxRetries)
                     {
                         Log.Error("All attempts failed; the operation will not be retried further for this specific interval.");
+                        break; // Exit the loop after the last attempt
                     }
-                    await Task.Delay(5000); // Wait 5 seconds before retrying
+                    await Task.Delay(5000); // Wait for 5 seconds before the next retry
                 }
             }
         }
-
     }
 }
