@@ -28,7 +28,6 @@ namespace ReportGeneratorTests
         {
             //Arrange
             var filePath = "TestFilePath.csv";
-            var date = new DateTime(2021, 1, 1);
             var records = new List<TradeRecord>
             {
                 new TradeRecord
@@ -39,13 +38,13 @@ namespace ReportGeneratorTests
                 }
             };
 
-
             //Act
             CsvWriterService_Sut.WriteCsv(records, filePath);
 
             //Assert
             Assert.True(File.Exists(filePath));
-
+            File.Delete(filePath);
+            Assert.False(File.Exists(filePath));
 
         }
     }

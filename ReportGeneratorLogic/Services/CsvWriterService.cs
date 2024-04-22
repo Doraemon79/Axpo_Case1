@@ -16,6 +16,7 @@ namespace ReportGeneratorLogic.Services
         public void WriteCsv(IEnumerable<TradeRecord> records, string filePath)
         {
             using var writer = new StreamWriter(filePath);
+            _csvConfig.Delimiter = ",";
             using var csv = new CsvWriter(writer, _csvConfig);
 
             csv.Context.RegisterClassMap<TradeRecordMap>();
