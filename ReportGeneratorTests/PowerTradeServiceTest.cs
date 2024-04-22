@@ -12,7 +12,7 @@ namespace ReportGeneratorTests
         }
 
         [Fact]
-        public void Test1()
+        public void GetTradesAsync_DatesAndCount_Should_Match()
         {
             //Arrange
             var date = new DateTime(2021, 1, 1);

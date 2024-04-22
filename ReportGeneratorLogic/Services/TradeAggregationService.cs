@@ -11,14 +11,7 @@ namespace ReportGeneratorLogic.Services
         public List<TradeRecord> AggregateTrades(IEnumerable<PowerTrade> trades, DateTime tradeDate)
         {
             TimeSpan utcOffset = _timeZoneInfo.GetUtcOffset(tradeDate);
-            DateTime startDateTime = new DateTime(tradeDate.Year, tradeDate.Month, tradeDate.Day, 0, 0, 0, DateTimeKind.Unspecified);
-            if (utcOffset.Hours < 0)
-            {
-                startDateTime = startDateTime.AddDays(1);
-            }
-
-            startDateTime = startDateTime.Date.AddHours(-utcOffset.Hours);
-
+            DateTime startDateTime = CalculateStartDate(tradeDate, utcOffset);
             var aggregatedRecords = new Dictionary<int, TradeRecord>();
 
             foreach (var trade in trades)
@@ -53,6 +46,16 @@ namespace ReportGeneratorLogic.Services
 
             return aggregatedRecords.Values.OrderBy(r => r.PeriodId).ToList();
         }
+        private DateTime CalculateStartDate(DateTime tradeDate, TimeSpan utcOffset)
+        {
+            DateTime startDateTime = new DateTime(tradeDate.Year, tradeDate.Month, tradeDate.Day, 0, 0, 0, DateTimeKind.Unspecified);
+            if (utcOffset.Hours < 0)
+            {
+                startDateTime = startDateTime.AddDays(1);
+            }
 
+            startDateTime = startDateTime.Date.AddHours(-utcOffset.Hours);
+            return startDateTime;
+        }
     }
 }

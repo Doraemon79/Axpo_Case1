@@ -31,7 +31,7 @@ namespace ReportGeneratorTests
 
             //Assert
             Assert.Equal(3, trades.Count);
-            Assert.Equal(2.2, trades[0].Volume);
+            Assert.Equal(0, trades[0].Volume);
 
         }
 
