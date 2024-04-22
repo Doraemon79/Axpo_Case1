@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "C:\\Repos\\ReportGenerator\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3B026CA8-46E8-4D46-BC87-B562D5F0A1CB}|ReportGeneratorLogic\\ReportGeneratorLogic.csproj|c:\\repos\\reportgenerator\\reportgeneratorlogic\\services\\csvwriterservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3B026CA8-46E8-4D46-BC87-B562D5F0A1CB}|ReportGeneratorLogic\\ReportGeneratorLogic.csproj|solutionrelative:reportgeneratorlogic\\services\\csvwriterservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3B026CA8-46E8-4D46-BC87-B562D5F0A1CB}|ReportGeneratorLogic\\ReportGeneratorLogic.csproj|c:\\repos\\reportgenerator\\reportgeneratorlogic\\services\\tradeaggregationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3B026CA8-46E8-4D46-BC87-B562D5F0A1CB}|ReportGeneratorLogic\\ReportGeneratorLogic.csproj|solutionrelative:reportgeneratorlogic\\services\\tradeaggregationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{3B026CA8-46E8-4D46-BC87-B562D5F0A1CB}|ReportGeneratorLogic\\ReportGeneratorLogic.csproj|c:\\repos\\reportgenerator\\reportgeneratorlogic\\services\\powertradeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3B026CA8-46E8-4D46-BC87-B562D5F0A1CB}|ReportGeneratorLogic\\ReportGeneratorLogic.csproj|solutionrelative:reportgeneratorlogic\\services\\powertradeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B3A75A03-D2D5-4BFC-B667-4D1D01C5EFEA}|ReportGeneratorApp\\ReportGeneratorApp.csproj|c:\\repos\\reportgenerator\\reportgeneratorapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B3A75A03-D2D5-4BFC-B667-4D1D01C5EFEA}|ReportGeneratorApp\\ReportGeneratorApp.csproj|solutionrelative:reportgeneratorapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3B026CA8-46E8-4D46-BC87-B562D5F0A1CB}|ReportGeneratorLogic\\ReportGeneratorLogic.csproj|c:\\repos\\reportgenerator\\reportgeneratorlogic\\services\\tradeaggregationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3B026CA8-46E8-4D46-BC87-B562D5F0A1CB}|ReportGeneratorLogic\\ReportGeneratorLogic.csproj|solutionrelative:reportgeneratorlogic\\services\\tradeaggregationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3B026CA8-46E8-4D46-BC87-B562D5F0A1CB}|ReportGeneratorLogic\\ReportGeneratorLogic.csproj|c:\\repos\\reportgenerator\\reportgeneratorlogic\\services\\csvwriterservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3B026CA8-46E8-4D46-BC87-B562D5F0A1CB}|ReportGeneratorLogic\\ReportGeneratorLogic.csproj|solutionrelative:reportgeneratorlogic\\services\\csvwriterservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1E5AD387-BD09-4E08-AEBB-8762354F5DAA}|ReportGeneratorTests\\ReportGeneratorTests.csproj|c:\\repos\\reportgenerator\\reportgeneratortests\\csvwriterservicetest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -62,7 +62,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 10,
           "Children": [
             {
               "$type": "Document",
@@ -100,62 +100,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "CsvWriterService.cs",
               "DocumentMoniker": "C:\\Repos\\ReportGenerator\\ReportGeneratorLogic\\Services\\CsvWriterService.cs",
               "RelativeDocumentMoniker": "ReportGeneratorLogic\\Services\\CsvWriterService.cs",
               "ToolTip": "C:\\Repos\\ReportGenerator\\ReportGeneratorLogic\\Services\\CsvWriterService.cs",
               "RelativeToolTip": "ReportGeneratorLogic\\Services\\CsvWriterService.cs",
-              "ViewState": "AQIAAAgAAAAAAAAAAAAQwBMAAAAMAAAA",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAQwBEAAAA6AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-21T17:24:46.306Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "ICsvWriter.cs",
-              "DocumentMoniker": "C:\\Repos\\ReportGenerator\\ReportGeneratorLogic\\Services\\Interfaces\\ICsvWriter.cs",
-              "RelativeDocumentMoniker": "ReportGeneratorLogic\\Services\\Interfaces\\ICsvWriter.cs",
-              "ToolTip": "C:\\Repos\\ReportGenerator\\ReportGeneratorLogic\\Services\\Interfaces\\ICsvWriter.cs",
-              "RelativeToolTip": "ReportGeneratorLogic\\Services\\Interfaces\\ICsvWriter.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-22T08:24:28.743Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "IPowerTradeService.cs",
-              "DocumentMoniker": "C:\\Repos\\ReportGenerator\\ReportGeneratorLogic\\Services\\Interfaces\\IPowerTradeService.cs",
-              "RelativeDocumentMoniker": "ReportGeneratorLogic\\Services\\Interfaces\\IPowerTradeService.cs",
-              "ToolTip": "C:\\Repos\\ReportGenerator\\ReportGeneratorLogic\\Services\\Interfaces\\IPowerTradeService.cs",
-              "RelativeToolTip": "ReportGeneratorLogic\\Services\\Interfaces\\IPowerTradeService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAA0AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-22T08:24:35.543Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "TradeRecord.cs",
-              "DocumentMoniker": "C:\\Repos\\ReportGenerator\\ReportGeneratorLogic\\Models\\TradeRecord.cs",
-              "RelativeDocumentMoniker": "ReportGeneratorLogic\\Models\\TradeRecord.cs",
-              "ToolTip": "C:\\Repos\\ReportGenerator\\ReportGeneratorLogic\\Models\\TradeRecord.cs",
-              "RelativeToolTip": "ReportGeneratorLogic\\Models\\TradeRecord.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAUAAAAnAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-21T21:40:10.385Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "TradeAggregationService.cs",
               "DocumentMoniker": "C:\\Repos\\ReportGenerator\\ReportGeneratorLogic\\Services\\TradeAggregationService.cs",
               "RelativeDocumentMoniker": "ReportGeneratorLogic\\Services\\TradeAggregationService.cs",
               "ToolTip": "C:\\Repos\\ReportGenerator\\ReportGeneratorLogic\\Services\\TradeAggregationService.cs",
               "RelativeToolTip": "ReportGeneratorLogic\\Services\\TradeAggregationService.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAoAAABLAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-21T19:57:47.906Z",
               "EditorCaption": ""
@@ -175,6 +139,71 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Repos\\ReportGenerator\\ReportGeneratorApp\\Program.cs",
+              "RelativeDocumentMoniker": "ReportGeneratorApp\\Program.cs",
+              "ToolTip": "C:\\Repos\\ReportGenerator\\ReportGeneratorApp\\Program.cs",
+              "RelativeToolTip": "ReportGeneratorApp\\Program.cs",
+              "ViewState": "AQIAABYAAAAAAAAAAAAmwCAAAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-21T07:09:26.949Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PowerTradeService.cs",
+              "DocumentMoniker": "C:\\Repos\\ReportGenerator\\ReportGeneratorLogic\\Services\\PowerTradeService.cs",
+              "RelativeDocumentMoniker": "ReportGeneratorLogic\\Services\\PowerTradeService.cs",
+              "ToolTip": "C:\\Repos\\ReportGenerator\\ReportGeneratorLogic\\Services\\PowerTradeService.cs",
+              "RelativeToolTip": "ReportGeneratorLogic\\Services\\PowerTradeService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-21T20:26:28.737Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "TradeRecord.cs",
+              "DocumentMoniker": "C:\\Repos\\ReportGenerator\\ReportGeneratorLogic\\Models\\TradeRecord.cs",
+              "RelativeDocumentMoniker": "ReportGeneratorLogic\\Models\\TradeRecord.cs",
+              "ToolTip": "C:\\Repos\\ReportGenerator\\ReportGeneratorLogic\\Models\\TradeRecord.cs",
+              "RelativeToolTip": "ReportGeneratorLogic\\Models\\TradeRecord.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAUAAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-21T21:40:10.385Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "IPowerTradeService.cs",
+              "DocumentMoniker": "C:\\Repos\\ReportGenerator\\ReportGeneratorLogic\\Services\\Interfaces\\IPowerTradeService.cs",
+              "RelativeDocumentMoniker": "ReportGeneratorLogic\\Services\\Interfaces\\IPowerTradeService.cs",
+              "ToolTip": "C:\\Repos\\ReportGenerator\\ReportGeneratorLogic\\Services\\Interfaces\\IPowerTradeService.cs",
+              "RelativeToolTip": "ReportGeneratorLogic\\Services\\Interfaces\\IPowerTradeService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAA0AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-22T08:24:35.543Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ICsvWriter.cs",
+              "DocumentMoniker": "C:\\Repos\\ReportGenerator\\ReportGeneratorLogic\\Services\\Interfaces\\ICsvWriter.cs",
+              "RelativeDocumentMoniker": "ReportGeneratorLogic\\Services\\Interfaces\\ICsvWriter.cs",
+              "ToolTip": "C:\\Repos\\ReportGenerator\\ReportGeneratorLogic\\Services\\Interfaces\\ICsvWriter.cs",
+              "RelativeToolTip": "ReportGeneratorLogic\\Services\\Interfaces\\ICsvWriter.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-22T08:24:28.743Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 11,
               "Title": "TradeRecordMap.cs",
               "DocumentMoniker": "C:\\Repos\\ReportGenerator\\ReportGeneratorLogic\\Models\\TradeRecordMap.cs",
@@ -183,19 +212,7 @@
               "RelativeToolTip": "ReportGeneratorLogic\\Models\\TradeRecordMap.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-21T17:16:02.671Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Repos\\ReportGenerator\\ReportGeneratorApp\\Program.cs",
-              "RelativeDocumentMoniker": "ReportGeneratorApp\\Program.cs",
-              "ToolTip": "C:\\Repos\\ReportGenerator\\ReportGeneratorApp\\Program.cs",
-              "RelativeToolTip": "ReportGeneratorApp\\Program.cs",
-              "ViewState": "AQIAACQAAAAAAAAAAAASwDMAAABYAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-21T07:09:26.949Z",
+              "WhenOpened": "2024-04-21T17:16:02.671Z",
               "EditorCaption": ""
             },
             {
@@ -208,19 +225,7 @@
               "RelativeToolTip": "ReportGeneratorLogic\\Services\\Interfaces\\ITradeAggregationService.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-21T20:01:08.867Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "PowerTradeService.cs",
-              "DocumentMoniker": "C:\\Repos\\ReportGenerator\\ReportGeneratorLogic\\Services\\PowerTradeService.cs",
-              "RelativeDocumentMoniker": "ReportGeneratorLogic\\Services\\PowerTradeService.cs",
-              "ToolTip": "C:\\Repos\\ReportGenerator\\ReportGeneratorLogic\\Services\\PowerTradeService.cs",
-              "RelativeToolTip": "ReportGeneratorLogic\\Services\\PowerTradeService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-21T20:26:28.737Z",
+              "WhenOpened": "2024-04-21T20:01:08.867Z",
               "EditorCaption": ""
             },
             {
@@ -233,7 +238,8 @@
               "RelativeToolTip": "ReportGeneratorTests\\bin\\Debug\\net8.0\\fine-code-coverage\\coverage-tool-output\\Cobertura.xml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
-              "WhenOpened": "2024-04-22T15:47:31.059Z"
+              "WhenOpened": "2024-04-22T15:47:31.059Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -245,7 +251,8 @@
               "RelativeToolTip": "ReportGeneratorApp\\appsettings.json",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-04-21T20:01:47.159Z"
+              "WhenOpened": "2024-04-21T20:01:47.159Z",
+              "EditorCaption": ""
             }
           ]
         }

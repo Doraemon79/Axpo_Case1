@@ -12,7 +12,6 @@ namespace ReportGenerator
     {
         private static IServiceProvider? ServiceProvider;
 
-
         static async Task Main(string[] args)
         {
             // Configure Serilog
