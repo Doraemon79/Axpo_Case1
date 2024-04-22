@@ -5,7 +5,7 @@ Report generator
 CLI start:
 
 in the folder of ReportGeneratorApp type dotnet run and the preferred input example:
---outputPath "./reportsDirectory/" --interval 5 --timezone "America/New_York"
+dotnet run --interval 2 --timezone "America/New_York" --reportDate "2023-10-05"
 
 Time offset is calculated based on the region.
 It can execute one day by time.
