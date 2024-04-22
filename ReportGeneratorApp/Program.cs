@@ -1,20 +1,16 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using CsvHelper.Configuration;
 using Microsoft.Extensions.Configuration;
-using System;
-using System.IO;
-using System.Threading.Tasks;
-using CsvHelper;
+using Microsoft.Extensions.DependencyInjection;
 using ReportGeneratorLogic.Services;
 using ReportGeneratorLogic.Services.Interfaces;
-using CsvHelper.Configuration;
-using System.Globalization;
 using Serilog;
+using System.Globalization;
 
 namespace ReportGenerator
 {
     class Program
     {
-        private static IServiceProvider ServiceProvider;
+        private static IServiceProvider? ServiceProvider;
 
 
         static async Task Main(string[] args)
@@ -33,7 +29,7 @@ namespace ReportGenerator
                 if (!ValidateConfiguration())
                 {
                     Log.Fatal("Configuration validation failed.");
-                    return; // Exit the application if configuration is invalid
+                    return; // Exit the application if Configuration is invalid
                 }
                 await RunScheduledTasks();
             }
@@ -46,14 +42,14 @@ namespace ReportGenerator
                 Log.CloseAndFlush();
             }
         }
-       
+
         private static bool ValidateConfiguration()
         {
             var configuration = ServiceProvider.GetRequiredService<IConfiguration>();
             string outputPath = configuration["OutputFolderPath"];
             if (string.IsNullOrWhiteSpace(outputPath))
             {
-                Console.WriteLine("Output path is not specified in the configuration.");
+                Console.WriteLine("Output path is not specified in the Configuration.");
                 return false;
             }
 
@@ -84,8 +80,8 @@ namespace ReportGenerator
             var services = new ServiceCollection();
 
             IConfiguration configuration = new ConfigurationBuilder()
-                .SetBasePath(Directory.GetCurrentDirectory()) 
-                .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true) 
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
                 .AddCommandLine(args, new Dictionary<string, string> {
                     {"--outputPath", "OutputFolderPath"},
                     {"--interval", "IntervalMinutes"},
@@ -95,10 +91,10 @@ namespace ReportGenerator
 
             string timeZoneCode = configuration["TraderLocation"]!;
 
-            services.AddSingleton<IConfiguration>(configuration);
-            services.AddSingleton<IPowerTradeService, PowerTradeService>();
-            services.AddSingleton<ITradeAggregationService>(_ => new TradeAggregationService(timeZoneCode));
-            services.AddSingleton<ICsvWriter, CsvWriterService>();
+            services.AddSingleton(configuration);
+            services.AddTransient<IPowerTradeService, PowerTradeService>();
+            services.AddTransient<ITradeAggregationService>(_ => new TradeAggregationService(timeZoneCode));
+            services.AddTransient<ICsvWriter, CsvWriterService>();
             services.AddSingleton(new CsvConfiguration(CultureInfo.InvariantCulture)
             {
                 Delimiter = ";"
@@ -115,17 +111,16 @@ namespace ReportGenerator
 
             while (true)
             {
-                await GenerateAndSaveReport();
+                await GenerateAndSaveReport(configuration, ServiceProvider);
                 await Task.Delay(interval);
             }
         }
 
-        private static async Task GenerateAndSaveReport()
+        private static async Task GenerateAndSaveReport(IConfiguration configuration, IServiceProvider? _serviceProvider)
         {
             int retryAttempts = 0;
-            var configuration = ServiceProvider.GetRequiredService<IConfiguration>();
-            int maxRetries;
-            int.TryParse(configuration["MaxRetries"], out maxRetries);
+            var Configuration = _serviceProvider.GetRequiredService<IConfiguration>();
+            _ = int.TryParse(Configuration["MaxRetries"], out int maxRetries);
 
             while (retryAttempts < maxRetries)
             {
@@ -139,16 +134,14 @@ namespace ReportGenerator
                     var trades = await powerTradeService.GetTradesAsync(followingDay);
                     var records = tradeAggregationService.AggregateTrades(trades, followingDay);
 
-                    
                     string reportDirectoryPath = configuration["OutputFolderPath"];
                     if (!Directory.Exists(reportDirectoryPath))
                     {
-                        Directory.CreateDirectory(reportDirectoryPath);
+                        _ = Directory.CreateDirectory(reportDirectoryPath);
                     }
 
                     string filePath = $"{reportDirectoryPath}PowerPosition_{DateTime.UtcNow:yyyyMMdd}_{DateTime.UtcNow:HHmm}.csv";
                     csvWriter.WriteCsv(records, filePath);
-
                     Log.Information("Report generated and saved to: {FilePath}", filePath);
                     break;
                 }

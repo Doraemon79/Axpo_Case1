@@ -1,0 +1,15 @@
+C:\Repos\ReportGenerator\ReportGeneratorLogic\bin\Debug\net8.0\ReportGeneratorLogic.deps.json
+C:\Repos\ReportGenerator\ReportGeneratorLogic\bin\Debug\net8.0\ReportGeneratorLogic.dll
+C:\Repos\ReportGenerator\ReportGeneratorLogic\bin\Debug\net8.0\ReportGeneratorLogic.pdb
+C:\Repos\ReportGenerator\ReportGeneratorLogic\bin\Debug\net8.0\PowerService.dll
+C:\Repos\ReportGenerator\ReportGeneratorLogic\obj\Debug\net8.0\ReportGeneratorLogic.csproj.AssemblyReference.cache
+C:\Repos\ReportGenerator\ReportGeneratorLogic\obj\Debug\net8.0\ReportGeneratorLogic.GeneratedMSBuildEditorConfig.editorconfig
+C:\Repos\ReportGenerator\ReportGeneratorLogic\obj\Debug\net8.0\ReportGeneratorLogic.AssemblyInfoInputs.cache
+C:\Repos\ReportGenerator\ReportGeneratorLogic\obj\Debug\net8.0\ReportGeneratorLogic.AssemblyInfo.cs
+C:\Repos\ReportGenerator\ReportGeneratorLogic\obj\Debug\net8.0\ReportGeneratorLogic.csproj.CoreCompileInputs.cache
+C:\Repos\ReportGenerator\ReportGeneratorLogic\obj\Debug\net8.0\ReportGeneratorLogic.sourcelink.json
+C:\Repos\ReportGenerator\ReportGeneratorLogic\obj\Debug\net8.0\ReportGe.03FB4A99.Up2Date
+C:\Repos\ReportGenerator\ReportGeneratorLogic\obj\Debug\net8.0\ReportGeneratorLogic.dll
+C:\Repos\ReportGenerator\ReportGeneratorLogic\obj\Debug\net8.0\refint\ReportGeneratorLogic.dll
+C:\Repos\ReportGenerator\ReportGeneratorLogic\obj\Debug\net8.0\ReportGeneratorLogic.pdb
+C:\Repos\ReportGenerator\ReportGeneratorLogic\obj\Debug\net8.0\ref\ReportGeneratorLogic.dll
