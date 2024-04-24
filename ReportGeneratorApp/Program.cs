@@ -72,6 +72,11 @@ namespace ReportGenerator
             }
 
             string inputDate = configuration["ReportDate"];
+            if (string.IsNullOrEmpty(inputDate))
+            {
+                inputDate = DateTime.UtcNow.AddDays(1).ToString("yyyy-MM-dd");
+                Log.Information("Report date is not specified in the configuration.We use today's date.");
+            }
             if (!DateTime.TryParseExact(inputDate, "yyyy-MM-dd", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime reportDate))
             {
                 Log.Error("Invalid date format. Please ensure the date is in ISO 8601 format (YYYY-MM-DD). Received date: {InputDate}", inputDate);
