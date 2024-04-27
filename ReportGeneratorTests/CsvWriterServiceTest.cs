@@ -30,10 +30,9 @@ namespace ReportGeneratorTests
             var filePath = "TestFilePath.csv";
             var records = new List<TradeRecord>
             {
-                new TradeRecord
-                {
+                new() {
                 PeriodId = 1,
-                dateTime = "01-01-2021",
+                DateTime = "01-01-2021",
                 Volume = 1.1,
                 }
             };

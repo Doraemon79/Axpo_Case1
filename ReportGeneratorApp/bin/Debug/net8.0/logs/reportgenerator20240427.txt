@@ -1,0 +1,12 @@
+2024-04-27 20:37:53.499 +02:00 [INF] Starting up the service...
+2024-04-27 20:38:19.392 +02:00 [INF] Report generated and saved to: ./reports/PowerPosition_20240428_202404271838.csv
+2024-04-27 20:39:09.156 +02:00 [INF] Starting up the service...
+2024-04-27 20:39:11.762 +02:00 [ERR] Failed to generate and save report on attempt 1/5
+Axpo.PowerServiceException: Error retrieving power volumes
+   at Axpo.PowerService.CheckThrowError()
+   at Axpo.PowerService.GetTradesAsync(DateTime date)
+   at ReportGeneratorLogic.Services.PowerTradeService.GetTradesAsync(DateTime date) in C:\Repos\ReportGenerator\ReportGeneratorLogic\Services\PowerTradeService.cs:line 11
+   at ReportGenerator.Program.GenerateAndSaveReport() in C:\Repos\ReportGenerator\ReportGeneratorApp\Program.cs:line 141
+2024-04-27 20:39:20.779 +02:00 [INF] Report generated and saved to: ./reports/PowerPosition_20240428_202404271839.csv
+2024-04-27 20:41:09.273 +02:00 [INF] Starting up the service...
+2024-04-27 20:41:18.374 +02:00 [INF] Report generated and saved to: ./reports/PowerPosition_20240428_202404271841.csv

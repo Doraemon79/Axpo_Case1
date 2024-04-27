@@ -25,7 +25,7 @@ namespace ReportGenerator
             {
                 Log.Information("Starting up the service...");
                 ServiceProvider = ConfigureServices(args);
-                if (!ValidateConfiguration())
+                if (!ValidateConfiguration(ServiceProvider))
                 {
                     Log.Fatal("Configuration validation failed.");
                     return; // Exit the application if Configuration is invalid
@@ -42,7 +42,7 @@ namespace ReportGenerator
             }
         }
 
-        private static bool ValidateConfiguration()
+        private static bool ValidateConfiguration(IServiceProvider? ServiceProvider)
         {
             var configuration = ServiceProvider.GetRequiredService<IConfiguration>();
 
@@ -71,18 +71,6 @@ namespace ReportGenerator
                 return false;
             }
 
-            string inputDate = configuration["ReportDate"];
-            if (string.IsNullOrEmpty(inputDate))
-            {
-                inputDate = DateTime.UtcNow.AddDays(1).ToString("yyyy-MM-dd");
-                Log.Information("Report date is not specified in the configuration.We use today's date.");
-            }
-            if (!DateTime.TryParseExact(inputDate, "yyyy-MM-dd", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime reportDate))
-            {
-                Log.Error("Invalid date format. Please ensure the date is in ISO 8601 format (YYYY-MM-DD). Received date: {InputDate}", inputDate);
-                return false;
-            }
-
             return true;
         }
 
@@ -102,7 +90,7 @@ namespace ReportGenerator
 
             string timeZoneCode = configuration["TraderLocation"]!;
 
-            services.AddSingleton(configuration);
+            services.AddSingleton<IConfiguration>(configuration);
             services.AddTransient<IPowerTradeService, PowerTradeService>();
             services.AddTransient<ITradeAggregationService>(_ => new TradeAggregationService(timeZoneCode));
             services.AddTransient<ICsvWriter, CsvWriterService>();
@@ -131,11 +119,15 @@ namespace ReportGenerator
         {
             var configuration = ServiceProvider.GetRequiredService<IConfiguration>();
             int retryAttempts = 0;
-            int maxRetries;
-            int.TryParse(configuration["MaxRetries"], out maxRetries);
+            _ = int.TryParse(configuration["MaxRetries"], out int maxRetries);
 
-            // Getting the previously validated report date from the configuration
-            DateTime.TryParseExact(configuration["ReportDate"], "yyyy-MM-dd", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime reportDate);
+            DateTime extractionDate = DateTime.UtcNow;
+
+            string reportDirectoryPath = configuration["OutputFolderPath"];
+            if (!Directory.Exists(reportDirectoryPath))
+            {
+                Directory.CreateDirectory(reportDirectoryPath);
+            }
 
             while (retryAttempts < maxRetries)
             {
@@ -144,27 +136,18 @@ namespace ReportGenerator
                     var tradeAggregationService = ServiceProvider.GetRequiredService<ITradeAggregationService>();
                     var powerTradeService = ServiceProvider.GetRequiredService<IPowerTradeService>();
                     var csvWriter = ServiceProvider.GetRequiredService<ICsvWriter>();
+                    DateTime dayAhead = extractionDate.AddDays(1);
 
+                    var trades = await powerTradeService.GetTradesAsync(dayAhead);
+                    var records = tradeAggregationService.AggregateTrades(trades, dayAhead);
 
-                    var trades = await powerTradeService.GetTradesAsync(reportDate.AddDays(1));
-                    var records = tradeAggregationService.AggregateTrades(trades, reportDate.AddDays(1));
-
-                    string reportDirectoryPath = configuration["OutputFolderPath"];
-                    if (!Directory.Exists(reportDirectoryPath))
-                    {
-                        _ = Directory.CreateDirectory(reportDirectoryPath);
-                    }
-
-                    string filePath = $"{reportDirectoryPath}PowerPosition_{reportDate:yyyyMMdd}_{DateTime.UtcNow:HHmm}.csv";
-                    using (var writer = new StreamWriter(filePath))
-                    using (var csv = new CsvHelper.CsvWriter(writer, new CsvConfiguration(CultureInfo.InvariantCulture) { Delimiter = ";" }))
-                    {
-                        csv.WriteRecords(records); // Writing the records to the CSV file
-                    }
+                    string filePath = $"{reportDirectoryPath}PowerPosition_{dayAhead:yyyyMMdd}_{DateTime.UtcNow:yyyyMMddHHmm}.csv";
+                    csvWriter.WriteCsv(records, filePath);
 
                     Log.Information("Report generated and saved to: {FilePath}", filePath);
-                    return; // Exit the method after successful execution
+                    return;
                 }
+
                 catch (Exception ex)
                 {
                     Log.Error(ex, "Failed to generate and save report on attempt {RetryAttempt}/{MaxRetries}", retryAttempts + 1, maxRetries);
@@ -172,9 +155,9 @@ namespace ReportGenerator
                     if (retryAttempts >= maxRetries)
                     {
                         Log.Error("All attempts failed; the operation will not be retried further for this specific interval.");
-                        break; // Exit the loop after the last attempt
+                        break;
                     }
-                    await Task.Delay(5000); // Wait for 5 seconds before the next retry
+                    await Task.Delay(5000);
                 }
             }
         }

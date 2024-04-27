@@ -6,6 +6,11 @@ namespace ReportGeneratorTests
     {
         private readonly PowerTradeService PowerTradeService_Sut;
 
+        public PowerTradeServiceTest(PowerTradeService powerTradeService_Sut)
+        {
+            PowerTradeService_Sut = powerTradeService_Sut;
+        }
+
         public PowerTradeServiceTest()
         {
             PowerTradeService_Sut = new PowerTradeService();
@@ -22,7 +27,7 @@ namespace ReportGeneratorTests
             var trades = service.GetTradesAsync(date);
 
             //Assert
-            Assert.Equal(24, trades.Result.First().Periods.Count());
+            Assert.Equal(24, trades.Result.First().Periods.Length);
             Assert.Equal(date, trades.Result.First().Date);
 
         }

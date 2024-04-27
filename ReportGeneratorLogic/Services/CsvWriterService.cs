@@ -2,33 +2,30 @@
 using CsvHelper.Configuration;
 using ReportGeneratorLogic.Models;
 using ReportGeneratorLogic.Services.Interfaces;
+using Serilog;
 
 namespace ReportGeneratorLogic.Services
 {
-    public class CsvWriterService : ICsvWriter
+    public class CsvWriterService(CsvConfiguration csvConfig) : ICsvWriter
     {
-        private readonly CsvConfiguration _csvConfig;
+        private readonly CsvConfiguration _csvConfig = csvConfig;
 
-        public CsvWriterService(CsvConfiguration csvConfig)
-        {
-            _csvConfig = csvConfig;
-        }
         public void WriteCsv(IEnumerable<TradeRecord> records, string filePath)
         {
-            using var writer = new StreamWriter(filePath);
-            _csvConfig.Delimiter = ",";
-            using var csv = new CsvWriter(writer, _csvConfig);
-
-            csv.Context.RegisterClassMap<TradeRecordMap>();
-            csv.WriteHeader<TradeRecord>();
-            csv.NextRecord();
-
-            foreach (var record in records)
+            try
             {
-                csv.WriteRecord(record);
-                csv.NextRecord();
+                using (var writer = new StreamWriter(filePath))
+                using (var csv = new CsvWriter(writer, _csvConfig))
+                {
+                    csv.Context.RegisterClassMap<TradeRecordMap>();
+                    csv.WriteRecords(records);
+                }
             }
-
+            catch (Exception ex)
+            {
+                Log.Error(ex, "Failed to write records to CSV at {FilePath}", filePath);
+                throw;
+            }
         }
     }
 }

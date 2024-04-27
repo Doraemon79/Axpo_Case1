@@ -5,7 +5,6 @@ namespace ReportGeneratorTests
 {
     public class TradeAggregationServiceTest
     {
-        string timeZoneId = "GMT Standard Time";
         private readonly TradeAggregationService TradeAggregationService_Sut;
 
         public TradeAggregationServiceTest()
