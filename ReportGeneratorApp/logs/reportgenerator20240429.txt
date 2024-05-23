@@ -1,0 +1,114 @@
+2024-04-29 09:16:07.307 +02:00 [INF] Starting up the service...
+2024-04-29 09:16:07.437 +02:00 [ERR] Failed to generate and save report on attempt 1/5
+System.TimeZoneNotFoundException: The time zone ID 'Berlin/Europe' was not found on the local computer.
+   at System.TimeZoneInfo.FindSystemTimeZoneById(String id)
+   at ReportGeneratorLogic.Services.TradeAggregationService..ctor(String timeZoneId) in C:\Repos\ReportGenerator\ReportGeneratorLogic\Services\TradeAggregationService.cs:line 9
+   at ReportGenerator.Program.<>c__DisplayClass3_0.<ConfigureServices>b__0(IServiceProvider _) in C:\Repos\ReportGenerator\ReportGeneratorApp\Program.cs:line 95
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitFactory(FactoryCallSite factoryCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitDisposeCache(ServiceCallSite transientCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass2_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(ServiceIdentifier serviceIdentifier, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at ReportGenerator.Program.GenerateAndSaveReport() in C:\Repos\ReportGenerator\ReportGeneratorApp\Program.cs:line 136
+2024-04-29 09:16:12.482 +02:00 [ERR] Failed to generate and save report on attempt 2/5
+System.TimeZoneNotFoundException: The time zone ID 'Berlin/Europe' was not found on the local computer.
+   at System.TimeZoneInfo.FindSystemTimeZoneById(String id)
+   at ReportGeneratorLogic.Services.TradeAggregationService..ctor(String timeZoneId) in C:\Repos\ReportGenerator\ReportGeneratorLogic\Services\TradeAggregationService.cs:line 9
+   at ReportGenerator.Program.<>c__DisplayClass3_0.<ConfigureServices>b__0(IServiceProvider _) in C:\Repos\ReportGenerator\ReportGeneratorApp\Program.cs:line 95
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitFactory(FactoryCallSite factoryCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitDisposeCache(ServiceCallSite transientCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass2_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(ServiceIdentifier serviceIdentifier, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at ReportGenerator.Program.GenerateAndSaveReport() in C:\Repos\ReportGenerator\ReportGeneratorApp\Program.cs:line 136
+2024-04-29 09:16:17.499 +02:00 [ERR] Failed to generate and save report on attempt 3/5
+System.TimeZoneNotFoundException: The time zone ID 'Berlin/Europe' was not found on the local computer.
+   at System.TimeZoneInfo.FindSystemTimeZoneById(String id)
+   at ReportGeneratorLogic.Services.TradeAggregationService..ctor(String timeZoneId) in C:\Repos\ReportGenerator\ReportGeneratorLogic\Services\TradeAggregationService.cs:line 9
+   at ReportGenerator.Program.<>c__DisplayClass3_0.<ConfigureServices>b__0(IServiceProvider _) in C:\Repos\ReportGenerator\ReportGeneratorApp\Program.cs:line 95
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitFactory(FactoryCallSite factoryCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitDisposeCache(ServiceCallSite transientCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass2_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(ServiceIdentifier serviceIdentifier, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at ReportGenerator.Program.GenerateAndSaveReport() in C:\Repos\ReportGenerator\ReportGeneratorApp\Program.cs:line 136
+2024-04-29 09:16:22.511 +02:00 [ERR] Failed to generate and save report on attempt 4/5
+System.TimeZoneNotFoundException: The time zone ID 'Berlin/Europe' was not found on the local computer.
+   at System.TimeZoneInfo.FindSystemTimeZoneById(String id)
+   at ReportGeneratorLogic.Services.TradeAggregationService..ctor(String timeZoneId) in C:\Repos\ReportGenerator\ReportGeneratorLogic\Services\TradeAggregationService.cs:line 9
+   at ReportGenerator.Program.<>c__DisplayClass3_0.<ConfigureServices>b__0(IServiceProvider _) in C:\Repos\ReportGenerator\ReportGeneratorApp\Program.cs:line 95
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitFactory(FactoryCallSite factoryCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitDisposeCache(ServiceCallSite transientCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass2_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(ServiceIdentifier serviceIdentifier, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at ReportGenerator.Program.GenerateAndSaveReport() in C:\Repos\ReportGenerator\ReportGeneratorApp\Program.cs:line 136
+2024-04-29 09:16:27.525 +02:00 [ERR] Failed to generate and save report on attempt 5/5
+System.TimeZoneNotFoundException: The time zone ID 'Berlin/Europe' was not found on the local computer.
+   at System.TimeZoneInfo.FindSystemTimeZoneById(String id)
+   at ReportGeneratorLogic.Services.TradeAggregationService..ctor(String timeZoneId) in C:\Repos\ReportGenerator\ReportGeneratorLogic\Services\TradeAggregationService.cs:line 9
+   at ReportGenerator.Program.<>c__DisplayClass3_0.<ConfigureServices>b__0(IServiceProvider _) in C:\Repos\ReportGenerator\ReportGeneratorApp\Program.cs:line 95
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitFactory(FactoryCallSite factoryCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitDisposeCache(ServiceCallSite transientCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass2_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(ServiceIdentifier serviceIdentifier, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at ReportGenerator.Program.GenerateAndSaveReport() in C:\Repos\ReportGenerator\ReportGeneratorApp\Program.cs:line 136
+2024-04-29 09:16:27.533 +02:00 [ERR] All attempts failed; the operation will not be retried further for this specific interval.
+2024-04-29 09:17:11.717 +02:00 [INF] Starting up the service...
+2024-04-29 09:17:14.315 +02:00 [INF] Report generated and saved to: ./reports/PowerPosition_20240430_202404290717.csv
+2024-04-29 09:18:30.655 +02:00 [INF] Starting up the service...
+2024-04-29 09:18:35.426 +02:00 [INF] Report generated and saved to: ./reports/PowerPosition_20240430_202404290718.csv
+2024-04-29 09:20:00.113 +02:00 [INF] Starting up the service...
+2024-04-29 09:20:03.211 +02:00 [INF] Report generated and saved to: ./reports/PowerPosition_20240430_202404290720.csv
+2024-04-29 09:40:01.678 +02:00 [INF] Starting up the service...
+2024-04-29 09:40:06.299 +02:00 [INF] Report generated and saved to: ./reports/PowerPosition_20240430_202404290740.csv
+2024-04-29 09:42:10.349 +02:00 [INF] Report generated and saved to: ./reports/PowerPosition_20240430_202404290742.csv
+2024-04-29 09:44:13.164 +02:00 [INF] Report generated and saved to: ./reports/PowerPosition_20240430_202404290744.csv
+2024-04-29 09:46:13.181 +02:00 [ERR] Failed to generate and save report on attempt 1/5
+Axpo.PowerServiceException: Error retrieving power volumes
+   at Axpo.PowerService.CheckThrowError()
+   at Axpo.PowerService.GetTradesAsync(DateTime date)
+   at ReportGeneratorLogic.Services.PowerTradeService.GetTradesAsync(DateTime date) in C:\Repos\ReportGenerator\ReportGeneratorLogic\Services\PowerTradeService.cs:line 11
+   at ReportGenerator.Program.GenerateAndSaveReport() in C:\Repos\ReportGenerator\ReportGeneratorApp\Program.cs:line 141
+2024-04-29 09:46:18.416 +02:00 [INF] Report generated and saved to: ./reports/PowerPosition_20240430_202404290746.csv
+2024-04-29 09:48:22.323 +02:00 [INF] Report generated and saved to: ./reports/PowerPosition_20240430_202404290748.csv
+2024-04-29 09:50:22.327 +02:00 [ERR] Failed to generate and save report on attempt 1/5
+Axpo.PowerServiceException: Error retrieving power volumes
+   at Axpo.PowerService.CheckThrowError()
+   at Axpo.PowerService.GetTradesAsync(DateTime date)
+   at ReportGeneratorLogic.Services.PowerTradeService.GetTradesAsync(DateTime date) in C:\Repos\ReportGenerator\ReportGeneratorLogic\Services\PowerTradeService.cs:line 11
+   at ReportGenerator.Program.GenerateAndSaveReport() in C:\Repos\ReportGenerator\ReportGeneratorApp\Program.cs:line 141
+2024-04-29 09:50:32.124 +02:00 [INF] Report generated and saved to: ./reports/PowerPosition_20240430_202404290750.csv
+2024-04-29 09:52:32.757 +02:00 [INF] Report generated and saved to: ./reports/PowerPosition_20240430_202404290752.csv
+2024-04-29 15:19:27.687 +02:00 [INF] Starting up the service...
+2024-04-29 15:19:31.198 +02:00 [INF] Report generated and saved to: ./reports/PowerPosition_20240430_202404291319.csv
+2024-04-29 15:21:33.147 +02:00 [INF] Report generated and saved to: ./reports/PowerPosition_20240430_202404291321.csv
+2024-04-29 15:22:40.467 +02:00 [INF] Starting up the service...
+2024-04-29 15:22:41.469 +02:00 [INF] Report generated and saved to: ./reports/PowerPosition_20240430_202404291322.csv
+2024-04-29 15:24:43.755 +02:00 [INF] Report generated and saved to: ./reports/PowerPosition_20240430_202404291324.csv

@@ -15,7 +15,6 @@ namespace ReportGeneratorLogic.Services
             if (utcOffset.Hours < 0) { startDateTime = startDateTime.AddDays(1); }
             startDateTime = startDateTime.Date.AddHours(-utcOffset.Hours);
 
-
             var aggregatedRecords = new Dictionary<int, TradeRecord>();
 
             foreach (var trade in trades)
@@ -44,6 +43,5 @@ namespace ReportGeneratorLogic.Services
 
             return [.. aggregatedRecords.Values.OrderBy(r => r.PeriodId)];
         }
-
     }
 }
